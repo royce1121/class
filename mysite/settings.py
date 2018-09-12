@@ -25,7 +25,7 @@ SECRET_KEY = 'l#etq+nz1#cl!knjc(#&ig@bputfxxb2fu0l2$-x3vy02iq!22'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'finalexam',
-    'import_export'
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -68,8 +68,6 @@ TEMPLATES = [
         },
     },
 ]
-
-IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
