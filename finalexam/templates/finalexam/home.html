@@ -1,0 +1,68 @@
+{% extends 'finalexam/base.html' %}
+
+{% block content %}
+    <div class="cont1">
+    {% if user.is_authenticated %}
+    <div class="space">
+    	<div class="col-md-1">
+		</div>
+		<div class="col-md-2">
+		<form action="{% url 'add' %}" method="post">
+		{% csrf_token %}
+    		<input class="btn5" type="submit" value="ADD" />
+		</form>				
+		</div>
+		<div class="col-md-6">
+			{% if error_message %}
+			<p>{{error_message}}</p>
+			{% endif %}
+    	<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Contact</th>
+				<th>Address</th>
+				<th>Delete</th>
+				<th>Update</th>
+			</tr>
+
+		{% for list in contact %}
+		<tr>
+	        <td>{{list.First_name}}</td>
+	        <td>{{list.Last_name}}</td>
+	        <td>{{list.contact}}</td>
+	        <td>{{list.address}}</td>
+			<td><a class="btn btn-default" href="{% url 'remove' pk=list.pk %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a class="btn btn-default" href="{% url 'edit' pk=list.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+		</tr>
+        {% endfor %}
+		</table>
+		<br><br>
+		</div>
+	</div>
+    {% else %}
+    <div class="login col-md-6">
+    	<form method="post" action="{% url 'login_view' %}">
+    	{% csrf_token %}
+  		<div class="container">
+    		<input type="text" placeholder="Enter Username" id="user" name="user" required>
+    		<br>
+    		<input type="password" placeholder="Enter Password" id="pass" name="pass" required>
+    		<br>
+    		<div>
+    			<button class="btn3" type="submit">Login</button><br>
+    		</div>
+  		</div>
+		</form>
+	</div>
+	<div class="login col-md-3">
+		<label class="loginleft"><b>Log In</b></label>
+		{% if error_message %}
+    		<label class="error"><b>{{error_message}}</b></label>
+    	{% endif %}
+	</div>
+	{% endif %}
+    </div>
+    <div class="notmoving">
+    </div>
+{% endblock %}

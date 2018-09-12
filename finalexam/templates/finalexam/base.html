@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/finalexam.css' %}">
+    </head>
+<body>
+    <div class="page-header">
+        <div class="topnav">
+        <h1><a>Final<br><fon size="-2">Examination</font></a></h1>
+        <div class="links">
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout_view' %}">Logout</a>
+            <a href="{% url 'import1' %}">Import</a>
+            <a href="{% url 'export' %}">Export</a>
+            <a href="/">Home</a>
+        {% else %}
+            <a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            <a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        {% endif %}
+        </div>
+        </div>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>

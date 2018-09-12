@@ -1,0 +1,35 @@
+{% extends 'finalexam/base.html' %}
+
+{% block content %}
+<div class="cont1"> 
+	<div class="spacing" style="text-align: center;">
+	<p>Are You Sure to Delete this data?</p>
+	<br>
+	{% for list in rem %}
+	<table class="confirm">
+	<th><a href="{% url 'remove1' pk=list.pk %}">Yes!</a></th>
+	<th><a href="/">Cancel!</a></th>
+	</table>
+	<br><br>
+	<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Contact</th>
+				<th>Address</th>
+			</tr>
+		<tr>
+	        <td>{{list.First_name}}</td>
+	        <td>{{list.Last_name}}</td>
+	        <td>{{list.contact}}</td>
+	        <td>{{list.address}}</td>
+		</tr>
+        {% endfor %}
+		</table>
+		</div>
+		<form class="back" action="{% url 'home' %}" method="post">
+		{% csrf_token %}
+    		<input class="btn1" type="submit" value="Back" />
+		</form>
+</div>
+{% endblock %}

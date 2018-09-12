@@ -1,0 +1,174 @@
+.page-header {
+    margin-top: 0;
+    padding: 10px 10px 20px 40px;
+    margin-bottom: 0;
+    height: 15%;
+}
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15pt;
+  font-family: 'Lobster';
+}
+
+.topnav a:hover {
+  color: black;
+}
+
+.topnav a.active {
+  color: white;
+  text-decoration: underline;
+}
+.links a{
+  float: right;
+  padding-right: 20px;
+}
+body{
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/56/94/21579f4dc25a025.jpg");  
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.cont1{
+  width: 100%;
+  margin-top: 0;
+}
+/* login */
+.back{
+  width: 10%;
+  float: right;
+  margin-right: 5%;
+}
+.back input{
+  width: 100%;
+}
+.center input{
+  color: black;
+}
+.btn1{  
+  width: 100%;
+}
+.btn2{  
+  width: 30%; 
+}
+form .btn5{  
+  width: 100%; 
+}
+form {
+  border: 3px solid #f1f1f1;
+}
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.login{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.loginleft{
+  margin-top: 15%;
+  margin-left: 5%;
+  color: white;
+  font-family: "Bookman Old Style";
+  font-size: 30px;
+}
+
+.error{
+  color: white;
+  font-family: "Bookman Old Style";
+  font-size: 20px;
+}
+
+.container{
+  padding: 20px 10px 20px 35px;
+}
+.space{
+  padding-top: 50px;
+}
+.spacing{
+  padding-top: 50px;
+  padding-bottom: 50px; 
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.spacing a{
+  color: red;
+  font-size: 16pt;
+}
+.spacing input[type=text]{
+  color: black;
+  font-size: 12pt;
+  width: 80%;
+}
+p{
+  color: white;
+  font-size: 16pt;
+  font-family: "Bookman Old Style";
+}
+/* table */
+.confirm{
+  width: 20%;
+  margin-left: 40%;
+}
+.confirm th{
+  width: 50%;
+  text-align: center;
+}
+.confirm th:hover{
+  background-color: #2a2a2a;
+}
+.confirm th a{
+  font-size: 10pt;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+}
+
+td, th {
+    border: 3px solid #dddddd;
+    text-align: left;
+    padding: 30px;
+    color: white;
+}
+.addform{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
