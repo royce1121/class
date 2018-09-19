@@ -8,7 +8,35 @@
         <link rel="stylesheet" href="{% static 'css/finalexam.css' %}">
     </head>
 <body>
-    <div class="page-header">
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        {% if user.is_authenticated %}
+        <li><a href="#">Export</a></li>
+        <li><a href="{% url 'import1' %}">Import</a></li>
+        <li><a href="{% url 'LogoutView' %}">Logout</a></li>
+        {% else %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'zxcv' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<!--     <div class="page-header">
         <div class="topnav">
         <h1><a>Final<br><fon size="-2">Examination</font></a></h1>
         <div class="links">
@@ -24,7 +52,7 @@
         </div>
         </div>
     </div>
-    <div>
+    <div> -->
         {% block content %}
         {% endblock %}
     </div>

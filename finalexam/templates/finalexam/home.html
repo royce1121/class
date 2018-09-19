@@ -8,7 +8,8 @@
 			{% if error_message %}
 			<p>{{error_message}}</p>
 			{% endif %}
-    	<table>
+		<div class="table-responsive">  
+    	<table class="table">
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
@@ -24,16 +25,19 @@
 	        <td>{{list.Last_name}}</td>
 	        <td>{{list.contact}}</td>
 	        <td>{{list.address}}</td>
-			<td><a class="btn btn-primary" href="{% url 'remove' pk=list.pk %}"><span class="glyphicon glyphicon-remove"></span></a></td>
-			<td><a class="btn btn-primary" href="{% url 'edit' pk=list.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+			<td><a class="btn" href="{% url 'remove' pk=list.pk %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a class="btn" href="{% url 'edit' pk=list.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
 		</tr>
         {% endfor %}
 		</table>
+		</div>
 		<br><br>
+		<div class='col-md-3 col-md-offset-9'>
 		<form action="{% url 'Add' %}">
 		{% csrf_token %}
-    		<input class="btn5 btn btn-primary" type="submit" value="ADD" />
+    		<input class="btn" style="width: 100%;" type="submit" value="ADD" />
 		</form>
+		</div>
 		</div>
 	</div>
     {% else %}
@@ -46,7 +50,7 @@
     		<input type="password" placeholder="Enter Password" id="pass" name="pass" required>
     		<br>
     		<div>
-    			<button class="btn3 btn btn-primary" type="submit">Login</button><br>
+    			<button class="btn" type="submit">Login</button><br>
     		</div>
   		</div>
 		</form>

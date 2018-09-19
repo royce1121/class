@@ -2,17 +2,24 @@
 
 {% block content %}
 <div class="cont1"> 
-		<div class="spacing">
-		
 		<form class="addform center" method="POST">
 			{% csrf_token %}
-    		{{ form.as_p }}
-    		<input class="btn2" type="submit" value="Save" />
+    		<tr>
+    		{{form.fname.label}}<br>	
+	        {{form.fname}}<br>
+	        {{form.lname.label}}<br>
+	        {{form.lname}}<br>
+	        {{form.contact.label}}<br>
+	        {{form.contact}}<br>
+	        {{form.address.label}}<br>
+	        {{form.address}}<br>
+			</tr>
+    		<input class="btn" style="width: 20%; margin-top: 2%;" type="submit" value="Save" />
 		</form>
 		</div>
 		<form class="back" action="{% url 'Home' %}">
 		{% csrf_token %}
-    		<input class="btn1" type="submit" value="Back" />
+    		<input class="btn" type="submit" value="Back" />
 		</form>
 </div>
 {% endblock %}

@@ -17,9 +17,12 @@ from django.views.generic import ListView, FormView, TemplateView
 
 class Home(ListView):
     model = Person
-    context_object_name = 'contact'
-    queryset = Person.objects.all()
     template_name = 'finalexam/home.html'
+
+    def get(self, request):
+        username = request.user.username
+        contact = Person.objects.filter(author=username)
+        return render(request, self.template_name, {'contact': contact})
 
 
 class qwerty(TemplateView):

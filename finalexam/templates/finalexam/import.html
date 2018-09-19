@@ -2,10 +2,13 @@
 
 {% block content %}
 <div class="cont1">
+<div class='col-md-8 col-md-offset-1'>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="myfile">
-    <button class="btn btn-primary" type="submit">Upload</button>
+    <p>Import Data</p>
+    <input type="file" name="myfile"><br>
+    <button class="btn" type="submit">Upload</button>
   </form>
+</div>
 </div>
 {% endblock %}

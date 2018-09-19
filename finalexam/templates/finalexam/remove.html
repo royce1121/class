@@ -3,15 +3,16 @@
 {% block content %}
 <div class="cont1"> 
 	<div class="spacing" style="text-align: center;">
-	<p>Are You Sure to Delete this data?</p>
 	<br>
 	{% for list in rem %}
-	<table class="confirm">
-	<th><a href="{% url 'remove1' pk=list.pk %}">Yes!</a></th>
-	<th><a href="/">Cancel!</a></th>
-	</table>
+	<div class="alert alert-danger">
+    <strong>Are You Sure to Delete this data?</strong><br>
+    <a href="{% url 'remove1' pk=list.pk %}" class="alert-link">Delete</a> or <a href="/" class="alert-link">Cancel</a>.
+  	</div>
+	
 	<br><br>
-	<table>
+	<div class="table-responsive">  
+    	<table class="table">
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
@@ -26,10 +27,11 @@
 		</tr>
         {% endfor %}
 		</table>
+	</div>
 		</div>
 		<form class="back" action="{% url 'Home' %}">
 		{% csrf_token %}
-    		<input class="btn1" type="submit" value="Back" />
+    		<input class="btn" type="submit" value="Back" />
 		</form>
 </div>
 {% endblock %}
