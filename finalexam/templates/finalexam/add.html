@@ -3,13 +3,13 @@
 {% block content %}
 <div class="cont1"> 
 		<div class="spacing">
-		<form class="addform" action="{% url 'add1' %}" method="POST">
+		<form class="addform" method="POST">
 			{% csrf_token %}
     		{{ form.as_p }}
     		<input class="btn2" type="submit" value="Save" />
 		</form>
 		</div>
-		<form class="back" action="{% url 'home' %}" method="post">
+		<form class="back" action="{% url 'Home' %}">
 		{% csrf_token %}
     		<input class="btn1" type="submit" value="Back" />
 		</form>

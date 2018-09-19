@@ -3,7 +3,7 @@
 {% block content %}
 <div class="cont1">
     <div class="login col-md-6">
-<form method="post" action="{% url 'create_view' %}">
+<form method="post" >
     {% csrf_token %}
   <div class="container">
     <input type="text" placeholder="Enter Username" id="user" name="user" required>
